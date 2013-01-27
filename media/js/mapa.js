@@ -72,7 +72,7 @@ function obtenerLugaresyCategorias(ul){
 					infowindow = new google.maps.InfoWindow();
 				}
 				infowindow.close();
-				var content= '<style>infow img{ float:left; width:100px; height:100px; margin: auto 20px auto auto;} infow .link{ position:absolute; right:0;bottom:0;} infow a.lnombre, infow  span.ldireccion{font-family: "Eurostile", Eurostile, "Myriad Pro", Arial, "sans-serif;";} </style>'+
+				var content= '<style>.infow a>img{ float:left; width:100px; height:100px; margin: auto 20px auto auto;} .infow .link{ position:absolute; right:0;bottom:0;} .infow a.lnombre, .infow  span.ldireccion{font-family: "Eurostile", Eurostile, "Myriad Pro", Arial, "sans-serif;";} </style>'+
 						'<div class="infow" style="width:350px;">'+
 							'<a href=\'/building/view/'+this.obj.pk+'\'><img src=\''+this.obj.foto_url+' \'/></a>'+
 							'<a class="lnombre" href=\'/building/view/'+this.obj.pk+'\'><strong>'+this.obj.nombre+'</strong></a><br/>'+

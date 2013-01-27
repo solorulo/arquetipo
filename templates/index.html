@@ -1,0 +1,64 @@
+{% extends "Includes/header.html" %}
+
+{% block body %}
+<!--desde aqui cambiamos cada seccion-->
+<section class="contenidos">
+
+  <div id="middle">
+    <section id="wrapper_m">
+      <div id="map_canvas">
+        <div id="cat">
+          <ul id="listapin">
+          </ul>
+        </div>
+        <!--end ctegory-->
+        <div class="mapa" id="mapa" > 
+          <img src="{{MEDIA_URL}}/images/dummys/mapa875x415.png" width="900" height="415"/>
+        </div>
+        <!--end mapa-->
+        <div id="controles">
+          <div class="botonc"> <span class="categ"><a href="#"><img src="{{MEDIA_URL}}/inicio/boton_categorias.png" alt="categorias" width="24" height="153" /></a></span> </div>
+          <div class="botonc" id="cpin"> <span class="cpin"><a href="#"><img src="{{MEDIA_URL}}/inicio/boton_agrega_localiza.png" alt="localiza" width="24" height="23" /></a> </span> </div>
+
+        </div> 
+
+      </div>
+      <!--end map canvas--></section>
+      <!--end wrapper_m--> 
+    </div>
+    <!--end middle-->
+    <div id="center">
+
+      <div class="scroll">
+        <div class="titulo_scroll">Mi barrio</div>
+        <div class="pie_foto">{{Monumento.nombre}}</div>
+        <div class="foto_scroll">
+          <div class="txtphoto"> <span class="ontxt">{{Monumento.texto}}... <a href="/building/view/{{Monumento.id}}" >ver mas</a></span> </div>
+          <div class="photo"><img src="{{Monumento.imagen}}" alt="foto" width="290" height="208"/></div>
+        </div>
+      </div>
+      <div class="scroll">
+        <div class="titulo_scroll">Lo más visto</div>
+        <div class="pie_foto">{{categoriaMostrar.nombre}}</div>
+        <div class="foto_scroll">
+          <div class="txtphoto"> <span class="ontxt">{{categoriaMostrar.texto}}... <a href="/building/view/{{categoriaMostrar.id}}" >ver mas</a></span> </div>
+          <div class="photo"><img src="{{categoriaMostrar.imagen}}" alt="foto" width="290" height="208"/></div>
+        </div>
+      </div>
+      <div class="scroll">
+        <div class="titulo_scroll">Lo último</div>
+        <div class="pie_foto">{{ultimoAgregado.nombre}}</div>
+        <div class="foto_scroll">
+          <div class="txtphoto"> <span class="ontxt">{{ultimoAgregado.texto}}... <a href="/building/view/{{ultimoAgregado.id}}" >ver mas</a></span> </div>
+          <div class="photo"><img src="{{ultimoAgregado.imagen}}" alt="foto" width="100%" height="208"/></div>
+        </div>
+      </div>
+    </div>
+    <!--end center-->
+
+    <div class="clr"></div>
+
+        </section><!--section contenidos--> 
+        <div class="clr"></div>
+        <section id="footersection"><!--footer section-->
+{% endblock %}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="shortcut icon" href="{{MEDIA_URL}}images/favicon.ico" type="image/x-icon"/>
+		<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="{{MEDIA_URL}}js/imagenes/jquery.MultiFile.js" type="text/javascript" language="javascript"></script>
+<script src="{{MEDIA_URL}}js/imagenes/jquery.form.js" type="text/javascript" language="javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}css/sections.css"/>
+<title>Entrecalle</title>
+
+<script>
+
+$(document).ready(function(){
+
+    $('#imagen').MultiFile({
+    max: 1,
+    accept: 'jpg|png'
+  });
+
+});
+
+</script>
+
+
+</head>
+<body>
+
+  <div id="sections">
+    <section>
+      <div id="middle_s">
+        <div id="medium">
+          <div class="terms_title"><span>Mi Perfil ({{Informacion.usuario}})</span></div>
+          <div class="clear"></div>
+          <form action="/user/info" method="post" id="myForm" enctype="multipart/form-data">
+            <div id="anunciate_box">
+              <div class="campo_anunciate">
+                {% if not success %}
+                Error al realizar los cambios
+                {% else %}
+                Cambios realizados satisfactoriamente
+                {% endif %}
+                <label>Nombre:</label>
+                {% if Informacion.nombre %}
+                <input name="nombre" type="text" maxlength="50" class="validate[required] text-input" value="{{Informacion.nombre}}"/>
+                {% else %}
+                <input name="nombre" type="text" maxlength="50" class="validate[required] text-input" placeholder="Ingresa tu nombre"/>
+                {% endif %}
+              </div>
+              <div class="campo_anunciate">
+                <label>Apellidos:</label>
+                {% if Informacion.apellidos %}
+                <input name="apellidos"type="text" maxlength="100" class="validate[required] text-input" value="{{Informacion.apellidos}}" />
+                {% else %}
+                <input name="apellidos"type="text" maxlength="100" class="validate[required] text-input" placeholder="Ingresa tu apellido" />
+                {% endif %}
+              </div>
+              <div class="campo_anunciate">
+                <label>Apodo o <br />
+                  Usuario:</label>
+                  <input id="username" type="text" maxlength="16" title="max. 16 caracteres" class="validate[required] text-input" value="{{Informacion.usuario}}" readonly=readonly/>
+                </div>
+                <div class="campo_anunciate">
+                  <label>Email:</label>
+                  <input name="email" type="text" class="validate[required,custom[email]]" value="{{Informacion.email}}" />
+                </div>
+              </div>
+              <div id="perfil_imagen">
+                {% if Informacion.foto %}
+                <img src="{{Informacion.foto}}" alt="profilepic" width="210" height="210"/>
+                {% else %}
+                <img src="{{MEDIA_URL}}/images/dummys/dummy_user_m.png" alt="profilepic" width="210" height="210"/>
+                {% endif %}  
+              </div>
+              <input type="file" name="foto_perfil" id="id_foto_perfil">
+            </div>
+            <input class="button_1" type="submit" value="Guardar">
+          </form>
+        </div>
+        <!--end middle--> 
+      </section>
+      <!--end foot--> 
+
+    </div>
+    <!--end wrapper-->
+
+  </body>
+  </html>

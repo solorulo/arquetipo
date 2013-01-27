@@ -1,0 +1,128 @@
+def index(request):
+    if request.method == 'POST':
+        form = landing(request.POST)
+        if form.is_valid():
+            correo = form.cleaned_data['Correo']
+            try:
+                cor = Landing.objects.get(Correo = correo)
+                mensaje = "Lo sentimos pere este correo ya esta registrado"
+                return render(request,'landing.html',{'mensaje':mensaje,'form':form})
+            except Landing.DoesNotExist:
+                land = Landing(Correo = correo)
+                land.save()
+                mensaje = "Felicidades ya eres casi parte de entrecalle"
+                return render(request,'landing.html',{'mensaje':mensaje,'form':form})
+    else:
+        form = landing()
+    return render(request,'landing.html',{'form':form})
+
+def index2(request):
+    try:
+        if not request.session['login']:
+            if request.method == 'POST':
+                #Obtenemos las coordenadas de los edificios
+                coo = Coordenada.objects.all() #Coordenadas_id
+                edif = Edificio.objects.all()
+                form = Sesion(request.POST)
+                if form.is_valid():
+                    usuario = form.cleaned_data['usuario']
+                    password = form.cleaned_data['password']
+                    try:
+                        usu = Usuario.objects.get(Nick=usuario,Password = password)
+                        if usu:
+                            request.session["login"] = True
+                            request.session["nom"] = usu
+                            return render(request,'index.html',{
+                                                                'form':form,'sesion':request.session["login"],
+                                                                'datos':request.session['nom'],
+                                                                'coo':mapa()
+                                                                })
+                        else:
+                            request.session["login"] = False
+                            return render(request,'index.html',{
+                                                                'form':form,
+                                                                'sesion':request.session["login"],
+                                                                'coo':mapa()
+                                                                })
+                    except Usuario.DoesNotExist:
+                        request.session["login"] = False
+                        return render(request,'index.html',{
+                                                            'form':form,
+                                                            'sesion':request.session["login"],
+                                                            'coo':mapa()
+                                                            })    
+            else:
+                form = Sesion()
+                coo = mapa()
+            return render(request,'index.html',{
+                                                'form':form,
+                                                'coo':coo
+                                                })
+        else:
+            return render(request,'index.html',{
+                                                'sesion':request.session["login"],
+                                                'datos':request.session['nom'],
+                                                'coo':mapa()
+                                                })
+    except KeyError:
+        request.session['login']=False
+        return render(request,'index.html',{
+                                            'sesion':request.session["login"],
+                                            'coo':mapa()
+                                            })
+    
+
+##################################################### VISTAS PARA CREAR Y ELIMINAR SESIONES ######################################################################
+
+                                #################### TERMINAMOS UNA SESION ####################
+def logout(request):
+    try:
+        request.session['login'] = False
+        del request.session['nom']
+        return HttpResponseRedirect('/')
+    except KeyError:
+        return HttpResponseRedirect('/')
+    
+                                #################### INICIAMOS UNA SESION ####################
+def sesion(request):
+    try:
+        if not request.session['login']:
+            if request.method == 'POST':
+                form = Sesion(request.POST)
+                if form.is_valid():
+                    usuario = form.cleaned_data['usuario']
+                    password = form.cleaned_data['password']
+                    try:
+                        usu = Usuario.objects.get(Nick=usuario,Password = password)
+                        if usu:
+                            request.session["login"] = True
+                            request.session["nom"] = usu
+                            return render(request,'index.html',{'form':form,'sesion':request.session["login"],'datos':request.session['nom']})
+                        else:
+                            request.session["login"] = False
+                            return render(request,'index.html',{'form':form,'sesion':request.session["login"]})
+                    except Usuario.DoesNotExist:
+                        request.session["login"] = False
+                        return render(request,'index.html',{'form':form,'sesion':request.session["login"]})    
+            else:
+                form = Sesion()
+            return render(request,'index.html',{'form':form})
+        else:
+            return render(request,'index.html',{'sesion':request.session["login"],'datos':request.session['nom']})
+    except KeyError:
+        form = Sesion()
+        request.session['login']=False
+        return render(request,'index.html',{'form':form,'sesion':request.session["login"]})
+    
+    
+#################################### VISTAS PARA TODOS LOS EDIFICIOS, ALTA, BAJA, EDICION Y VISTA################################################################
+
+                                #################### DAMOS DE ALTA UN EDIFICIO ####################
+def edificio_agregar(request):
+    return EdificioAgregar(request)
+    
+                                #################### Generamos el JSON ####################
+def edificiovista(request,id):
+    return EdificioVista(request,id)
+def register(request):
+    User_register(request)

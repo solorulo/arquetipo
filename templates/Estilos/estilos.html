@@ -1,0 +1,249 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" href="..media/images/favicon.ico" type="image/x-icon"/>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="{{MEDIA_URL}}/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" language="javascript" src="{{MEDIA_URL}}/js/letters.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				
+$("#foo2").carouFredSel({
+	auto : false,
+	prev : "#foo1_prev",
+	next : "#foo1_next"
+});
+$("#foo2 a").prettyPhoto({
+	theme: "facebook",
+	changepicturecallback: function() {
+		$("#foo2").trigger("pause");
+	},
+	callback: function() {
+		$("#foo2").trigger("play");
+	}
+});
+			});
+		</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="{{MEDIA_URL}}/js/sliding.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.easing.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.collapse.js"></script>
+<link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}/css/sections.css"/>
+<title>Entrecalle</title>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=225008170863169";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="sections">
+  <section>
+    <div id="middle_s">
+      <div id="left">
+        <div id="wrapper_left">
+          <div id="blankWrapper"> 
+            <script type="text/javascript" charset="utf-8">
+$(function(){
+if(top.location.href.toLowerCase() == self.location.href.toLowerCase()) $('#docLink').show();
+$("#tabNav ul").idTabs("tab1"); 
+$('#NavLetter').listnav({
+initLetter:'a',
+includeNums: false,
+includeOther: true,
+});
+$('.lista a').click(function(){
+alert('click function demo');
+return false;
+});
+});</script>
+            <div class="listWrapper">
+              <div id="tabNav">
+                <div class="clr"></div>
+              </div>
+              <div id="tabs">
+                <div id="tab" class="tab">
+                  <div id="lista-nav">
+                    <p></p>
+                    <div id="listWrapper">
+                      <div id="NavLetter-nav" class="listNav"></div>
+                    </div>
+                    <!--end list wrapper--> 
+                  </div>
+                  <!--end LastnNav--> 
+                </div>
+                <!--en Tab tab --> 
+                
+              </div>
+              <!--end Tabs--> 
+            </div>
+            <!--end listWrapper--> 
+            
+          </div>
+          <!--end blank Wrapper--> 
+          
+        </div>
+        <!--end Wrapper Left-->
+        
+        <div id="slider">
+          <div class="types">Nombre estilo</div>
+          <div class="denuncia">
+            <div class="bad"></div>
+            <div class="like_it"></div>
+          </div>
+          <div class="prettyContainer">
+            <div class="image_carousel">
+              <div id="foo2">
+                <!--IMAGENES-->
+                <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"><img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="basketball" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="beachtree" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="cupcackes" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="hangmat" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="new york" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="laundry" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="mom son" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="picknick" width="125" height="125" /></a> <a rel="prettyPhoto[caroufredsel]" href="{{MEDIA_URL}}/images/dummys/750X550.png"> <img src="{{MEDIA_URL}}/images/dummys/ffffff.png" alt="shoes" width="125" height="125" /></a></div>
+              <div class="clearfix"></div>
+              <a class="prev" id="foo1_prev" href="#"><span>prev</span></a> <a class="next" id="foo1_next" href="#"><span>next</span></a></div>
+          </div>
+          <script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				$('.prettyGallery:last').prettyGallery(
+				{'navigation':'bottom','itemsPerPage':4});});
+		</script> 
+          <script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+				//Examples of how to assign the ColorBox event to elements
+				$(".ajax").colorbox();
+				$(".iframe").colorbox({iframe:true, width:"90%", height:"98%"});
+				
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Abrir Galeria");
+					return false;
+				});
+			});
+		</script> 
+        </div>
+        <div class="clear"></div>
+        <div id="mapa_estilo">
+          <div class="types">Reseña</div>
+                  <div class="edit_this">
+            <div class="edit_button"><img src="denunciar olvidadO/editar.png" alt="editar" width="82" height="21"></div>
+          </div>
+                  <div id="reseña_edificio">
+                    <div class="reseña_txt">
+                    <h2>Antecedentes</h2>
+                      <div class="antecedentes"> Lectus porta pulvinar montes pulvinar augue. Pulvinar a et purus velit, lectus dapibus auctor. Nascetur scelerisque phasellus nascetur, sed montes a phasellus proin. In penatibus massa! Vut pulvinar? Duis sociis nisi ac ultrices nisi magnis! Dictumst tristique platea elit magna urna ridiculus mid aenean ultrices, pulvinar dolor ac. Aliquam dapibus lundium non, porttitor est pellentesque magnis vel, odio ut ut. Rhoncus vel turpis, a porttitor! Tincidunt turpis tempor! Et rhoncus montes elementum vel rhoncus, turpis aliquam, ultrices tempor odio est diam? Turpis mus elementum, integer nec placerat rhoncus turpis rhoncus nec lacus hac sed nec placerat? Amet integer ut tristique etiam ridiculus dictumst non turpis! Urna cras facilisis cum rhoncus porttitor parturient? Dictumst tristique nunc augue cum tristique, egestas, vut. </div>
+                      <h2>Estado Actual</h2>
+                      <div class="estado_actual"> Augue est porttitor pulvinar! Urna? Cursus non? Aliquam proin? Mattis non pellentesque placerat magna, arcu arcu lacus, placerat magna. Rhoncus nec et sed! Aliquet rhoncus mattis placerat tempor adipiscing nisi lundium ultricies, cras vel, sit, placerat sit amet parturient? Odio scelerisque turpis dapibus porta in turpis vel, pulvinar, dignissim eu? Aenean, turpis duis? A turpis aenean egestas magna velit! Et ac. Velit enim proin. Hac nascetur et tristique porta, habitasse porttitor mid massa natoque, vel ac. Vel, magna et! Scelerisque amet, urna odio vel platea magna placerat pid ut, dignissim ultricies? Penatibus tincidunt! Phasellus magnis, pellentesque magna eros nunc purus in tortor? Elementum, tortor augue nec nisi urna dignissim lorem mid porta tempor et cras facilisis odio nunc porta. </div>
+                    </div>
+                  </div>
+          <div id="mapa"> <img src="{{MEDIA_URL}}/images/dummys/mapa600x500.png" width="600" height="500"/> </div>
+        </div>
+      </div>
+      <!--end left--> 
+      
+      <!--end left-->
+      
+      <div id="right">
+        <div class="listas">
+          <ul id="NavLetter" class="lista">
+            <!--lista de elementos en orden alfabético-->
+            <li><a href="#">A</a></li>
+            <li><a href="#">B</a></li>
+            <li><a href="#">C</a></li>
+            <li><a href="#">D</a></li>
+            <li><a href="#">E</a></li>
+            <li><a href="#">F</a></li>
+            <li><a href="#">G</a></li>
+            <li><a href="#">H</a></li>
+            <li><a href="#">I</a></li>
+            <li><a href="#">J</a></li>
+            <li><a href="#">K</a></li>
+            <li><a href="#">L</a></li>
+            <li><a href="#">M</a></li>
+            <li><a href="#">N</a></li>
+            <li><a href="#">Ñ</a></li>
+            <li><a href="#">O</a></li>
+            <li><a href="#">P</a></li>
+            <li><a href="#">Q</a></li>
+            <li><a href="#">R</a></li>
+            <li><a href="#">S</a></li>
+            <li><a href="#">T</a></li>
+            <li><a href="#">U</a></li>
+            <li><a href="#">V</a></li>
+            <li><a href="#">W</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Y</a></li>
+            <li><a href="#">Z</a></li>
+            <li><a href="#">Ä</a></li>
+            <li><a href="#">Ĉ</a></li>
+            <li><a href="#">Ï</a></li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="face_comments">
+          <div class="fb-comments" data-href="https://www.facebook.com/entrecalle" data-num-posts="10" data-width="265"></div>
+        </div>
+      </div>
+      <!--end right--> 
+    </div>
+    <!--end middle--> 
+  </section>
+  <section id="foot">
+    <div id="pubs_entrecalle">
+      <div id="newsticker-demo">
+        <div class="newsticker-jcarousellite">
+          <ul>
+            <li>
+              <div class="thumbnail"> <img src="{{MEDIA_URL}}/images/dummys/50x50.png" width="50" height="50"> </div>
+              <div class="info"> <a href="#">Titulo noticia</a> <span class="cat">Descripcion notica</span> </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="thumbnail"> <img src="{{MEDIA_URL}}/images/dummys/50x50.png"> </div>
+              <div class="info"> <a href="#">Titulo noticia</a> <span class="cat">Descripcion notica</span> </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="thumbnail"> <img src="{{MEDIA_URL}}/images/dummys/50x50.png"> </div>
+              <div class="info"> <a href="#">Titulo noticia</a> <span class="cat">Descripcion notica</span> </div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="columna">
+      <div id="sponsor"><img src="{{MEDIA_URL}}/vistas/arq_dis_etc.png" width="281" height="107"/></div>
+      <div class="pub_sponsors">
+        <ul>
+          <li>
+            <div class="thumbnail"> <img src="{{MEDIA_URL}}/images/dummys/100x100.png" width="100" height="100"> </div>
+            <div class="info"> <a href="#">Patrocinador</a> <span class="cat">Mensaje</span> </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="columna">
+      <div id="contacto_vista"><img src="{{MEDIA_URL}}/vistas/contacta.png" width="282" height="107"/></div>
+      <span>Último tweet</span>
+      <div id="latest_tweet"> 
+        <script type="text/javascript">
+  		$(document).ready(function(){var user='entrecalle';$.getJSON(		'http://twitter.com/statuses/user_timeline.json?screen_name='+user+'&count=4&callback=?',function(data){var tweet=data[0].			text;tweet=tweet.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,function(url){return'<a href="'+url+'">'+url+'</a>'}).replace(/B@([_a-z0-9]+)/ig,function(reply){return reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(2)+'">'+reply.substring(2)+'</a>'});$("#latest_tweet").html(tweet)})})
+  </script>
+        <div class="loading"></div>
+      </div>
+    </div>
+  </section>
+  <!--end foot--> 
+  
+</div>
+<!--end wrapper-->
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}/css/agrega.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+</head>
+<body>
+<div id="main">
+  <div class="wrapper_mm">
+    <div class="content">
+      <h1>¿Conoces algún estilo, y no lo encuentras en el acervo?</h1>
+      <hr />
+      <h2>Al completar los mas relevante de la reseña en éste estilo, dejará de ser editable.</h2>
+      <!--<div class="encabezado"></div>-->
+      <div id="form_wrapper" class="form_wrapper">
+        <form class="estilo" action="#">
+          <h3>El esfuerzo de cada habitante quedará registrado permanentemente.</h3>
+          <div class="campo">
+            <label class="lba">Nombre del
+              estilo</label>
+            <input type="text" id="username" value="únicamente estilos desarrollados en México" maxlength="20"/>
+          </div>
+          <div class="campo">
+            <label class="lba">Origen:</label>
+            <br />
+            <textarea id="origen" name="estilo" rows="" type="style" maxlength="200">época, lugar, movimiento político, artístico, o social que lo originó.</textarea>
+            <div id="count1"></div>
+          </div>
+          <div class="campo">
+            <label class="lba">Definición y <small>características:</small></label>
+            <br />
+            <textarea id="estilo" name="" rows="" type="style" maxlength="250">en qué consiste, cualidades y elementos característicos.</textarea>
+            <div id="count2"></div>
+          </div>
+          <div class="campo">
+            <label class="lba">Exponentes:</label>
+            <br />
+            <textarea id="autor" name="" rows="" type="style" maxlength="150">nombres de los autores destacados del estilo arquitectónico.</textarea>
+            <div id="count3"></div>
+          </div>
+          
+          <!--script caracteres--> 
+          <script type="text/javascript">
+                                $('#origen').keyup(function () {
+                                    var left = 200 - $(this).val().length;
+                                    if (left < 0) {
+                                        left = 0;
+                                    }
+                                    $('#count1').text('Caracteres restantes: ' + left);
+                                });
+								 $('#estilo').keyup(function () {
+                                    var left = 250 - $(this).val().length;
+                                    if (left < 0) {
+                                        left = 0;
+                                    }
+                                    $('#count2').text('Caracteres restantes: ' + left);
+                                });
+								 $('#autor').keyup(function () {
+                                    var left = 150 - $(this).val().length;
+                                    if (left < 0) {
+                                        left = 0;
+                                    }
+                                    $('#count3').text('Caracteres restantes: ' + left);
+                                });
+                                </script>
+          <div class="campo"></div>
+          <div class="bottom">
+            <input type="submit" value="Publicar" />
+            <div class="clear"></div>
+          </div>
+        </form>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

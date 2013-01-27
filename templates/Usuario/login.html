@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Entrecalle</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/register.css" />
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/bootstrap.css">
+	<link rel="stylesheet" href="{{MEDIA_URL}}css/validationEngine.jquery.css" type="text/css"/>
+	
+	<!-- Scripts -->
+	<script>
+	jQuery(document).ready( function() {
+			// binds form submission and fields to the validation engine
+			jQuery("#login").validationEngine();
+		});
+	</script>
+	
+</head>
+<body>
+	<div class="wrapper_form">
+		<div class="content">
+			<h1>Bienvenido!!!</h1>
+			<h2>Ingresa con tu ID de <span>	</span> o utilizando tu cuenta de facebook.</h2>
+			<div id="form_wrapper" class="form_wrapper">
+				<form id="login" class="login active" action="" method="POST" >
+					<h3></h3>
+					{% if mensaje %}
+					<div class="campo">
+						<div class="alert alert-error">
+							<b>{{mensaje}}</b>
+						</div>
+					</div>
+					{% endif %}
+					<div class="campo">
+						{% csrf_token %}
+						<label>Apodo</label>
+						{{form.usuario}}
+					</div>
+					<div class="campo">
+						<label>Contraseña: </label>
+						{{form.password}}
+						<a href="/forgot_password/" class="forgot linkform">¿Olvidaste tu contraseña?</a>
+					</div>
+					<div class="bottom">
+						
+						<input type="submit" value="Enviar"></input>
+						<a href="/register/" class="linkform">¿No tienes cuenta? Registrate aquí</a>
+						<div class="clear"></div>
+					</div>
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="content_i">
+			<div id="logo"><a href="/"><img src="{{MEDIA_URL}}images/logo_entrecalle.png"/></a></div>
+			
+			<div id="registro">
+				<a href="/register/" rel="register" class="linkform">¿No tienes cuenta?</a><br />
+				<div class="reg"><a href="/register/" rel="register" class="linkform">Registrarme</a></div>
+			</div>
+		</div>
+		
+	</div>
+	
+
+	<!-- JS -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script src="{{MEDIA_URL}}js/languages/jquery.validationEngine-es.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{MEDIA_URL}}js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

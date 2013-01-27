@@ -1,0 +1,107 @@
+{% load cloudinary %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/agrega.css" />
+        <link rel="stylesheet" href="{{MEDIA_URL}}css/bootstrap.css" />
+
+        <!-- JS -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script type="text/javascript" src="{{MEDIA_URL}}js/mapa.js" ></script>
+
+    </head>
+    <body onload="initialize()">
+    <div id="main">
+		<div class="wrapper_sbig">
+        
+		<div class="content"><br />
+        <h1>Divulga un edificio, construcción o lugar que nadie ha compartido.</h1>
+        <hr />
+        <h2>Antes de empezar, recuerda verificar en el mapa de<span> Entrecalle</span> que no esté ya localizado</h2>
+          <!--<div class="encabezado"></div>-->
+				<div id="form_wrapper" class="form_wrapper">
+         		    <div id="dropper">
+                    <div id="areas">
+              
+                    <a href="/"><img src="{{MEDIA_URL}}images/logotipo_grande.png" alt="" width="254" height="254" /></a>
+                        {% if mensaje_m %}
+                       <div class="alert alert-error">
+                        {{mensaje_m}}
+                        </div>
+                    {% endif %}
+
+                            </div>
+
+                    
+                    </div>
+                {{msn}}
+                    <form class="edificio" action="" enctype="multipart/form-data" method="POST" >
+                       {% csrf_token %}
+                    
+				    <div class="campo">
+						<label>Nombre:</label>
+						{{form.nombre}}
+                      </div>
+                      <div class="campo">
+						<label>Categoria:</label>
+						{{form.categoria}}
+                      </div>
+
+                            <div class="campo">
+                        <label>Dirección</label>
+                          {{form.direccion}}
+                      </div>
+                            
+                            <div class="campo">
+                            <label>Descripcion</label>
+                                {{form.descripcion}}
+                            <div id="c1"></div>
+                    		</div>
+
+                            <div class="campo">
+                            <label>Imagen</label>
+                                {{form.foto_url}}
+                            </div>
+                            
+                            <!--script caracteres-->
+							<script type="text/javascript">
+                                $('#id_descripcion').keyup(function () {
+                                    var left = 200 - $(this).val().length;
+                                    if (left < 0) {
+                                        left = 0;
+                                    }
+                                    $('#c1').text('Caracteres restantes: ' + left);
+                                });
+								
+                                </script>
+                           
+                        {{form.longitud}}
+                        {{form.latitud}}
+						<div class="bottom">
+						  <input type="submit" value="Publicar" />
+						</div>
+
+					</form>
+                    
+
+				<div class="clear"></div>
+                <div id="mapa2">
+                    <p style="color:red;margin-bottom:0px;padding-bottom:0px;">Elige la posición dando clic en el mapa</p>
+    			<div id="mapa">
+    			mapa(650x150)
+   				 </div>
+   				 </div>
+				</div>
+		</div>
+		</div>
+		
+
+	  </div>
+    </body>
+</html>

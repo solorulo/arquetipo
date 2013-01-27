@@ -1,0 +1,27 @@
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}/js/sliding.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.easing.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.collapse.js"></script>
+		<script type="text/javascript" language="javascript" src="{{MEDIA_URL}}/js/jquery.prettyPhoto.js"></script>
+		<script type="text/javascript" language="javascript" src="{{MEDIA_URL}}js/jquery.carouFredSel-6.0.5-packed.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				
+$("#foo2").carouFredSel({
+	auto : false,
+	prev : "#foo1_prev",
+	next : "#foo1_next",
+});
+$("#foo2 a").prettyPhoto({
+	theme: "facebook",
+	changepicturecallback: function() {
+		$("#foo2").trigger("pause");
+	},
+	callback: function() {
+		$("#foo2").trigger("play");
+		location.reload(true);
+	}
+});
+			});
+		</script>
+		<link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}/css/sections.css"/>

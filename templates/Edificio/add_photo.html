@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+      <title></title>
+      {% load multiuploader %}
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}/css/agrega.css" />
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+      <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+      <script type="text/javascript">
+            $(document).ready(function(){
+            $("#id").val("{{edificio_id}}");
+            });
+      </script>
+</head>
+<body>
+      <div id="main">
+          <div class="wrapper_big">
+              <div class="contentab">
+
+                  <h2><strong>{{nombre}}</strong></h2>
+                  <br />
+                  <div id="pics">
+                        <!--
+                        <div class="content_pic">
+                              <div class="photo_"><img src="{{MEDIA_URL}}/images/dummys/140x140.png"/></div>
+                              <div class="creditos">
+                                    <span>Créditos de la imagen</span>
+                                    <span><input name="" type="radio" value="propia" /><label>Propia</label></span>
+                              </div>
+                              <div class="tipo_imagen">
+                                    <span>Tipo de imágen</span>
+                                    <span><input name="" type="radio" value="propia" /><label>Actual</label></span>
+                                    <span><input name="" type="radio" value="propia" /><label>Antigua</label></span>
+                                    <span><input name="" type="radio" value="propia" /><label>Sketchbook</label></span>
+                              </div>
+                        </div>
+                        -->
+
+                        {% multiupform %}
+
+                  </div>
+                  <!--content--> 
+            </div>
+            <!--wrapper_big--> 
+      </div>
+      <!--main-->
+
+</body>
+</html>

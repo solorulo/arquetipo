@@ -1,0 +1,203 @@
+{% extends "Includes/header.html" %}
+
+{% block body %}
+<div id="fb-root"></div>
+<script type="text/javascript">    
+
+function remplazos(){
+  var contenedor = document.getElementById("contenedor");
+  var Cronica_Nueva = document.getElementById("LaCronica").value;
+
+  var Caja = document.getElementById("LaCronica");
+
+  var cronica = document.createElement("div");
+  cronica.setAttribute("class","cronica");
+
+  var f_cronica = document.createElement("div");
+  f_cronica.setAttribute("class","f_cronica");
+
+  var ima = document.createElement("img");
+  ima.setAttribute("src","{{Informacion.foto}}");
+  ima.setAttribute("width","100");
+  ima.setAttribute("height","100");
+
+  var txt_c = document.createElement("div");
+  txt_c.setAttribute("class","txt_c");
+
+  var cronica_txt = document.createElement("div");
+  cronica_txt.setAttribute("class","cronica_txt")
+  cronica_txt.appendChild(document.createTextNode(Caja.value));
+
+  document.getElementById("LaCronica").value = "";
+
+  f_cronica.appendChild(ima);
+  txt_c.appendChild(cronica_txt);
+  
+  cronica.appendChild(f_cronica);
+  cronica.appendChild(txt_c);
+  contenedor.appendChild(cronica);
+  //contenedor.appendChild(txt_c);
+}
+$(document).ready(function() {
+  $('#single').toggleButton({'selectionMode':'single'});
+  $('#normal').toggleButton();
+  $('#preselected').toggleButton();
+  $('#imgholder').toggleButton({'buttonSelector':'.toggleBtn div'});
+  $("#AgregarCronica").click(function(){
+    $.get("/building/add/cronica/",{
+      LaCronica:$('#LaCronica').val(),
+      edifID:$('#Id_del_edificio').val(),
+    },
+    function(data) {
+      $("#mensaje").text(data);
+    }
+    //algo();
+    );
+    remplazos();
+      //window.location.reload();
+      return false;
+      //window.location.reload();
+    });
+
+
+});
+
+</script>
+<div id="sections">
+  <section>
+    <div id="middle_s">
+      <div id="left">
+        <div id="wrapper_left">
+          <div id="blankWrapper">
+            <div class="space"></div>
+          </div>
+          <!--end blank Wrapper--> 
+
+        </div>
+        <!--end Wrapper Left-->
+        
+        <div id="slider">
+          <div class="types">{{ info_edificio.nombre}}</div>
+          <div class="denuncia">
+            <div class="bad">
+              <div id="imgholder">
+                <div class="toggleBtn">
+
+                  <!--
+                  <div id="buttonImg"></div>
+                  <span>Denuncia Olvidado </span>
+                  <input type="checkbox" name="imgdemo" id="denuncia" value="3" />
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prettyContainer">
+          <div class="image_carousel">
+            <div id="foo2"> 
+              <!--IMAGENES-->
+              {% for imagen in info_edificio.imagenes %}
+              <a rel="prettyPhoto[caroufredsel]" href="{{imagen}}"><img src="{{imagen}}" alt="{{info_edificio.nombre}}" width="125" height="125" /> </a>
+              {% endfor %} 
+            </div>
+            <div class="clearfix"></div>
+            <a class="prev" id="foo1_prev" href="#"><span>prev</span></a> <a class="next" id="foo1_next" href="#"><span>next</span></a> </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div id="mapa_edificio">
+          <div class="types">Reseña</div>
+            <!--
+            <div class="edit_this">
+              <div class="edit_button">Editar</div>
+            </div>
+          -->
+          <div id="reseña_edificio">
+            <div class="reseña_txt">
+              <h2>Descripcion</h2>
+              <div class="antecedentes">{{info_edificio.descripcion}}</div>
+            </div>
+          </div>
+          <div class="mapa" id="mapa" style="height: 500px; width: 600px;"> <img src="{{MEDIA_URL}}/images/dummys/mapa600x500.png" width="600" height="500"/> </div>
+
+          <div id="bio_autor">
+            <div class="types">Datos lugar</div>
+              <!--
+              <div class="edit_this">
+                <div class="edit_button">Editar</div>
+              </div>
+            -->
+            <div id="info_edificio">
+                <!--<div class="campo_vista">
+                  <label>Autor</label>
+                  <div class="input_txt">{{info_edificio.autor}}</div>
+                </div>-->
+                
+                <div class="campo_vista">
+                  <label>Ubicación</label>
+                  <div class="input_txt">{{info_edificio.direccion}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end left-->
+
+
+      <!--end right--> 
+    </div>
+    <!--end middle--> 
+  </section>
+  <section id="foot">
+    <div class="types">Crónicas</div>
+    <div id="cronicas">
+      <div id="contenedor">
+        {% for C,foto in Cronicas reversed%}
+        <div class="cronica">
+          <div class="f_cronica">
+            {% if foto %}
+            <img src="{{foto}}" width="100" height="100"/>
+            {% else %}
+            <img src="{{MEDIA_URL}}/images/dummys/dummy_user_m.png" width="100" height="100"/>
+            {% endif %}
+          </div>
+          <div class="txt_c">
+            <div class="cronica_txt">
+              {{C.cronica}}
+            </div>
+            <div>
+                        </div>
+            <!--<div ID = "TESTING">
+              {{info_edificio.test}}
+            </div>-->
+            <div>
+              {{C.fecha}}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if Informacion.menu %}
+      <div class="cronica">
+        <input type="hidden" id="Id_del_edificio" value="{{info_edificio.edificio_id}}">
+        <div class="f_cronica">
+                    {% if Informacion.foto %}
+<img src="{{Informacion.foto}}" alt="profilepic" width="100" height="100"/>
+                    {% else %}
+                    <img src="{{MEDIA_URL}}/images/dummys/dummy_user_m.png" alt="profilepic" width="100" height="100"/>
+                    {% endif %}
+        </div>
+        <div class="txt_c">
+          <textarea name="" cols="" rows="" id="LaCronica" maxlength="120"></textarea>
+          <div class="addcomment" id="AgregarCronica">Publicar</div>
+        </div>
+      </div>
+      {% endif %}
+      
+    </div>
+  </section>
+  <!--end foot--> 
+
+</div>
+<!--end wrapper-->
+{% endblock %}

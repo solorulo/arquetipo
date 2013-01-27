@@ -1,0 +1,174 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="shortcut icon" href="{{MEDIA_URL}}images/favicon.ico" type="image/x-icon"/>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}css/styles.css"/>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/sliding.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.easing.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.collapse.js"></script>
+
+<!-- MAPA -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/mapa.js"></script>
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+    initialize();
+
+  });
+
+
+</script>
+<!-- building_view -->
+{% if building_view %}
+  <script type="text/javascript">
+    pk = {{info_edificio.pk}}
+  </script>
+  {% include "Includes/header_building_view.html" %}
+
+{% endif %}
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.colorbox.js"></script>
+<script>
+//Este script es el que controla los modals
+$('document').ready(function(){
+        //Examples of how to assign the ColorBox event to elements
+        //$(".ajax").colorbox();
+        $(".ajax").colorbox({
+          iframe:true, 
+          width:"100%", 
+          height:"100%",
+          onClosed: function(){
+            location.reload();
+          }
+        });
+        $(".perfil").colorbox({
+          iframe:true, 
+          width:"1000px", 
+          height:"490px",
+          onClosed: function(){
+            location.reload();
+          }
+      });
+        //$(".inline").colorbox({inline:true, width:"50%"});*/
+      });
+</script>
+
+<title>Entrecalle</title>
+</head>
+
+<body>
+
+<!--<div id="fixmenu2"></div>
+  <div id="fixmenu3"></div>-->
+
+  <div id="main">
+   <div id="content">
+
+      <div id="wrapper">
+        {% if Informacion.menu %}
+    
+    {% if not info_edificio.view %}
+    
+      <a href="/building/add/" title="Cargar Edificio"><div id="fixmenu"><img src="{{MEDIA_URL}}images/building_add.png"></div></a>
+    
+    {% elif info_edificio.view %}
+    
+      <a href="/building/add/" title="Cargar Edificio"><div id="fixmenu"><img src="{{MEDIA_URL}}images/building_add.png"></div></a>
+      <a class='ajax' href="/building/photo/add/{{info_edificio.edificio_id}}/" title="Cargar Fotografía"><div id="fixmenu1"><img src="{{MEDIA_URL}}images/photo_add.png" alt="" /></div></a>
+    
+    {% endif %}
+  
+  {% endif %} 
+        <div id="top">
+          <div id="header">
+            <div id="logo"><a href="/"><img src="{{MEDIA_URL}}/images/logo.png" alt="logo_109x107" width="105" height="103" /></a></div>
+            <div id="redes">
+              <ul id="social">
+                <li class="show">
+                  <a href="">
+                    {% if not Informacion.menu %}
+                    <img src="{{MEDIA_URL}}/inicio/boton_iniciar_sesion.png" alt="inicia sesion" width="186" height="36" />
+                    {% endif %}
+                  </a>
+                </li>
+              <!--<li><a href=""><img src="{{MEDIA_URL}}/images/icn_face.png" alt="fb" width="36" height="36" /></a></li>
+              <li><a href=""><img src="{{MEDIA_URL}}/images/icn_twitter.png" alt="fb" width="36" height="36" /></a></li>-->
+            </ul>
+            <div id="log" class="log">
+              <form class="logon" action="/login/" method="POST">
+                {% csrf_token %}
+                <div class="campo">
+                  <label>Apodo o e-mail</label>
+                  <input type="text" name="usuario" placeholder="Usuario" />
+                </div>
+                <div class="campo">
+                  <label>Contraseña: </label>
+                  <input type="password" name="password" placeholder="****" />
+                  <a href="/forgot_password">¿Olvidaste tu contraseña?</a> </div>
+                  <div class="bottom">
+
+                    <input type="submit" value="Enviar" />
+                   
+                    <a href="/register">¿No tienes cuenta? Registrate aquí</a>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+              <!--end_log--> 
+            </div>
+            <!--end_redes-->
+
+
+            <!-- Aqui comienza el menu del usuario -->
+            {% if Informacion.menu %}
+            <div id="usertop">
+              <nav id="nav_u">
+                <ul>
+                  <li class="imgp">
+                    <a href="/user" class="perfil">
+                    {% if Informacion.foto %}
+                    <img src="{{Informacion.foto}}" alt="profilepic" width="40" height="40"/>
+                    {% else %}
+                    <img src="{{MEDIA_URL}}/images/dummys/dummy_user_m.png" alt="profilepic" width="40" height="40"/>
+                    {% endif %}
+                    </a>
+                 </li>
+                  <li>{{Informacion.usuario}}<br/>
+                    <small>{{Informacion.permiso}}</small></li>
+                    <li>Puntos:<br/>
+                      <small>{{Informacion.puntos}}</small></li>
+                      <li>Comentarios:<br/>
+                        <small>{{Informacion.comentarios}}</small></li>
+                        <li>Fotografías:<br/>
+                          <small>{{Informacion.fotografias}}</small></li>
+                          
+                              <li class="sesion"><a href="/logout"><strong>Cerrar<br/>
+                                Sesión</strong></a></li>
+                              </ul>
+                            </nav>
+                          </div>
+                          <!--end usertop--> 
+                        </div>
+                        <!--end header--> 
+                      </div>
+            {% endif %}
+
+            {% block body %}
+            {% endblock %}
+
+            {% include "Includes/footer.html" %}

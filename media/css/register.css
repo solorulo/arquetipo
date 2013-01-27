@@ -1,0 +1,815 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "Eurostile", Eurostile, "Myriad Pro", Arial, "sans-serif;";
+	font-size: 14px;
+	background: #f4f4f4 url(../images/bg.gif) repeat top left;
+	color: #6c6c6b;
+	text-shadow: 1px 1px 1px #fff;
+	overflow-y: scroll;
+	width:100%;
+	height:100%;
+}
+h1{
+	font-size: 56px;
+	margin-top: 5px;
+}
+h2{
+	font-size: 15px;
+	padding: 0px 0px 40px 0px;
+	color: #aaa;
+}
+h2 span{
+	color: #4294b7;
+}
+a{
+	color: #7E7D7A;
+	text-decoration: none;
+}
+a:hover{
+	color: #A09C9A;
+	text-decoration: underline;
+}
+p{
+	padding:5px 0px;
+}
+.wrapper_m{
+	width: 800px;
+	max-width: 100%;
+	min-width: 320px;
+	height: 900px;
+	max-height: 100%;
+	min-height: 400px;
+	background-image: url(../agregar/cuadro_sg.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	margin-top: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	overflow: auto;
+}
+.box{
+	width:49%;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clear{
+	clear: both;
+	margin: auto;
+	float: left;
+}
+a.back{
+	color:#777;
+	position:fixed;
+	top:5px;
+	right:10px;
+	text-decoration:none;
+}
+
+.content{
+	padding-top: 0px;
+	padding-left: 55px;
+	float: left;
+	width: 490px;
+	margin-top: 80px;
+}
+
+.content_i{
+	padding-top: 80px;
+	padding-right: 80px;
+	float: right;
+}
+
+/* Form Style */
+.form_wrapper{
+	background: #fff;
+	border: 1px solid #ddd;
+	width: 485px;
+	font-size: 16px;
+	-moz-box-shadow: 1px 1px 7px #ccc;
+	-webkit-box-shadow: 1px 1px 7px #ccc;
+	box-shadow: 1px 1px 7px #ccc;
+	float: left;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.form_wrapper h3{
+	color: #333;
+	font-size: 15px;
+	border-bottom: 1px solid #ddd;
+	height: 8px;
+	padding-top: 5px;
+	padding-right: 25px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+.form_wrapper form{
+	display:none;
+	background:#fff;
+}
+.form_wrapper .column{
+	width:47%;
+	float:left;
+}
+form.active{
+	display:block;
+}
+form.login{
+	width: 420px;
+}
+form.log{
+	width: 420px;
+}
+form.register{
+	width: 480px;
+}
+form.forgot_password{
+	width: 400px;
+}
+.form_wrapper a{
+	text-decoration:none;
+	color:#777;
+	font-size:12px;
+}
+
+.wrapper{ background-color:rgba(255,255,255,0.7); height:100%; width:100%;}
+
+.wrapper_form{ background-color: rgba(255,255,255,0.7); max-height: auto; height:700px; width: 900px; background-image: url(../registro/fondo_registro.png); background-repeat: no-repeat; background-position: center center; margin: auto; position: relative; }
+
+.form_wrapper a:hover{
+	color:#000;
+}
+.form_wrapper label{
+	display: block;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 3px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	float: left;
+	font-size: 0.9em;
+	width: 80px;
+}
+.form_wrapper input[type="radio"]{
+	float: left;
+	margin-top: 5px;
+}
+
+.form_wrapper select{
+	float: left;
+	margin-top: 3px;
+	width:60%;
+}
+.form_wrapper input[type="text"],
+.form_wrapper input[type="password"]{
+	border: solid 1px #E5E5E5;
+	background: #FFFFFF;
+	padding: 3px;
+	display: block;
+	width: 60%;
+	height: 8px;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	-moz-box-shadow: 0px 0px 5px #3a86a1;
+	-webkit-box-shadow: 0px 0px 5px #3a86a1;
+	box-shadow: 0px 0px 5px #3a86a1;
+	-webkit-border-radius: 13px;
+	border-radius: 13px;
+	-moz-border-radius: 13px;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+	margin-top: 8px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+.sex{
+	float: left;
+	width: 23px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	margin-right: 5px;
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 11px;
+}
+
+.form_wrapper input[type="text"]:focus,
+.form_wrapper input[type="password"]:focus{
+	background-color: rgb(58, 134, 161, 0.6);
+	width: 65%;
+	height: 8px;
+	border-color: #6dcff6;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+ .form_wrapper select[type="list"]{
+	width: 60%;-moz-box-shadow: 0px 0px 5px #3a86a1;
+	-webkit-box-shadow: 0px 0px 5px #3a86a1;
+	box-shadow: 0px 0px 5px #3a86a1;margin-top: 8px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 10px;}
+	
+	
+	
+	.form_wrapper textarea[type="txt"]{
+	border: solid 1px #E5E5E5;
+	background: #FFFFFF;
+	padding: 5px;
+	display: block;
+	width: 60%;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	-moz-box-shadow: 0px 0px 5px #3a86a1;
+	-webkit-box-shadow: 0px 0px 5px #3a86a1;
+	box-shadow: 0px 0px 5px #3a86a1;
+	-webkit-border-radius: 13px;
+	border-radius: 13px;
+	-moz-border-radius: 13px;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+	margin-top: 3px;
+	margin-right: 10px;
+	margin-bottom: 3px;
+	margin-left: 10px;}
+
+
+	.form_wrapper textarea[type="txt"]:focus{
+	background-color: rgb(58, 134, 161, 0.6);
+	width: 65%;
+	border-color: #6dcff6;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);}
+
+.form_wrapper .bottom{
+	border-top: 1px solid #ddd;
+	margin-top: 10px;
+	clear: both;
+	color: #6c6c6b;
+}
+.form_wrapper .bottom a{
+	display: block;
+	clear: both;
+	text-align: right;
+	color: #333;
+	padding-top: 10px;
+	padding-right: 65px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+.form_wrapper a.forgot{
+	float: right;
+	font-style: italic;
+	line-height: 24px;
+	color: #333;
+	text-shadow: 1px 1px 1px #6c6c6b;
+	margin-right: 35px;
+}
+.form_wrapper a.forgot:hover{
+	color:#6c6c6b;
+}
+.form_wrapper div.remember{
+	float: left;
+	width: 240px;
+	font-size: 11px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+.form_wrapper div.remember input{
+	float:left;
+	margin:2px 5px 0px 0px;
+}
+.form_wrapper span.error{
+	visibility:hidden;
+	color:red;
+	font-size:11px;
+	font-style:italic;
+	display:block;
+	margin:4px 30px;
+}
+.form_wrapper input[type="submit"] {
+	background: #4294b7;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-family: "Eurostile", Eurostile, Myriad Pro, Arial, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	width: 150px;
+	cursor: pointer;
+	float: right;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0px 0px 2px #fff inset;
+	-webkit-box-shadow: 0px 0px 2px #fff inset;
+	box-shadow: 0px 0px 2px #fff inset;
+	margin-top: 8px;
+	margin-right: 65px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	padding-top: 8px;
+	padding-right: 0;
+	padding-bottom: 9px;
+	padding-left: 0;
+}
+.form_wrapper input[type="submit"]:hover {
+	background: #3a86a1;
+	-moz-box-shadow: 0px 0px 2px #eaeaea inset;
+	-webkit-box-shadow: 0px 0px 2px #eaeaea inset;
+	box-shadow: 0px 0px 2px #eaeaea inset;
+	color: #fff;
+}
+
+.form_wrapper input[type="reset"] {
+	background: #4294b7;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-family: "Eurostile", Eurostile, Myriad Pro, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	width: 80px;
+	cursor: pointer;
+	float: right;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 0px 2px #fff inset;
+	-webkit-box-shadow: 0px 0px 2px #fff inset;
+	box-shadow: 0px 0px 2px #fff inset;
+	margin-top: 6px;
+	margin-right: 65px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+}
+
+
+.reg {
+	background: #4294b7;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-family: "Eurostile", Eurostile, Myriad Pro, Arial, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 0px 1px #fff inset;
+	-webkit-box-shadow: 0px 0px 1px #fff inset;
+	box-shadow: 0px 0px 1px #fff inset;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	padding-top: 8px;
+	padding-right: 0;
+	padding-bottom: 9px;
+	padding-left: 0;
+	width: 85px;
+}
+.reg a {
+	color: #fff;
+	text-decoration: none;
+}
+.reg:hover {
+	background: #3a86a1;
+	-moz-box-shadow: 0px 0px 1px #eaeaea inset;
+	-webkit-box-shadow: 0px 0px 1px #eaeaea inset;
+	box-shadow: 0px 0px 1px #eaeaea inset;
+	color: #fff;
+}
+
+.encabezado{
+	font-size: 15px;
+	color: #aaa;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+}
+
+.encabezado span{color: #4294b7;}
+
+#fblogin{
+	float: left;
+	height: 22px;
+	width: 192px;
+	background-image: url(../bienvenido/identificarme_bienvenido.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	 /*Transition*/
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+  -ms-transition: All 0.2s ease;
+  transition: All 0.2s ease;
+}
+
+#fblogin:hover{cursor:pointer;
+	height: 22px;
+	width: 192px;
+	background-image: url(../bienvenido/identificarme_bienvenido_h.png);
+	background-repeat: no-repeat;
+	background-position: center center;}
+	
+	#fblogin:active{cursor:pointer;
+	height: 22px;
+	width: 192px;
+	background-image: url(../bienvenido/identificarme_bienvenido.png);
+	background-repeat: no-repeat;
+	background-position: center center;}
+	
+	
+	
+	#fbregister{
+	float: left;
+	height: 22px;
+	width: 205px;
+	background-image: url(../registro/registrofb.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	 /*Transition*/
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+  -ms-transition: All 0.2s ease;
+  transition: All 0.2s ease;
+}
+
+	#fbregister:hover{cursor:pointer;
+	height: 22px;
+	width: 205px;
+	background-image: url(../registro/registrofb_h.png);
+	background-repeat: no-repeat;
+	background-position: center center;}
+	
+	#fbregister:active{cursor:pointer;
+	height: 22px;
+	width: 205px;
+	background-image: url(../registro/registrofb.png);
+	background-repeat: no-repeat;
+	background-position: center center;}
+	
+	
+	
+	#logo{
+	float: right;
+	height: 164px;
+	width: 167px;
+}
+	
+	#registro{
+	clear: both;
+	float: right;
+	margin-top: 40px;
+	text-align: center;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+.contetn_i{}
+
+.campo{
+	float: left;
+	width: 100%;
+	clear: both;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	height: auto;
+}
+
+
+/* simple css-based tooltip */
+.tooltip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    width:180px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:10px;
+ 
+    /* outline radius for mozilla/firefox only */
+    -moz-box-shadow:0 0 10px #000;
+    -webkit-box-shadow:0 0 10px #000;
+}
+
+
+
+
+
+/* Calendar: a Javascript class for Mootools that adds accessible and unobtrusive date pickers to your form elements <http://electricprism.com/aeron/calendar> */
+/* Default CSS for Calendar (navigation: 1), Copyright (c) 2007 Aeron Glemann <http://electricprism.com/aeron> */
+
+.hidden {
+	opacity: 0;
+	position: absolute;
+}
+.visible {
+	opacity: 1;
+}
+
+
+input.calendar,
+select.calendar {
+	width: 99px;
+}
+
+button.calendar {
+	background: url(calendar-icon.gif);
+	border: 0;
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin-right: 6px;
+	width: 20px;
+}
+button.calendar:hover,
+button.calendar.active {
+	background-position: 0 20px;
+}
+
+div.calendar {
+	background: url(calendar.png);
+	height: 195px;
+	padding: 0 6px;
+	text-align: center;
+	width: 147px;
+}	
+	div.calendar * {
+		margin: 0;
+		padding: 0;
+	}	
+	div.calendar div {
+		background: none !important;
+		cursor: move;
+		height: 185px;
+		overflow: hidden;
+		padding-top: 10px;
+		position: relative;
+		width: 147px;
+	}	
+	
+	div.calendar caption {
+		color: #333;
+		font: normal 12px/16px Arial, Helvetica, sans-serif;
+		padding-top: 6px;
+		text-align: center;
+		width: 100%;
+	}
+	div.calendar caption a {
+		cursor: pointer;
+		display: block;
+		height: 12px;
+		overflow: hidden;
+		position: absolute;
+		text-indent: -100px;
+		top: 17px;
+		width: 11px;
+	}
+	div.calendar caption a.prev {
+		background-image: url(calendar-prev.gif);
+		left: 0;
+	}
+	div.calendar caption a.next {
+		background-image: url(calendar-next.gif);
+		right: 0;
+	}
+	div.calendar caption a:hover {
+		background-position: 0 12px;
+	}
+	div.calendar caption span {
+		height: 25px;
+		position: relative;
+		text-align: center;
+	}
+	div.calendar caption span.month {
+		padding-right: 8px;
+	}
+	div.calendar caption span.month:after {
+		content: ',';
+	}
+
+	div.calendar table {
+		background: #FFF;
+		border: 0;
+		border-collapse: collapse;
+		border-spacing: 0;
+		cursor: default;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 147px;
+	}
+	div.calendar td,
+	div.calendar th {
+		border: 0;
+		color: #0597DB;
+		font: normal 12px Arial, Helvetica, sans-serif;
+		height: 21px;
+		text-align: center;
+		width: 21px;
+	}
+	div.calendar td {
+		background: url(calendar-td.gif);
+		color: #FFF;
+		font-size: 11px;
+	}
+	div.calendar td.invalid {
+		color: #999;
+	}
+	div.calendar td.valid {
+		background: url(calendar-valid.gif);
+		color: #0597DB;
+		cursor: pointer;
+	}
+	div.calendar td.hilite {
+		background: url(calendar-hilite.gif);
+	}
+	div.calendar td.inactive {
+		background: url(calendar-td.gif) 0 100%;
+		color: #FFF;
+	}
+	div.calendar td.active,
+	div.calendar td.hover {
+		background: url(calendar-valid.gif) 0 100%;
+		color: #FFF;
+		cursor: pointer;
+	}
+	
+	/* Calendar: a Javascript class for Mootools that adds accessible and unobtrusive date pickers to your form elements <http://electricprism.com/aeron/calendar> */
+/* Alternate CSS for Calendar (navigation: 2), Copyright (c) 2007 Aeron Glemann <http://electricprism.com/aeron> */
+
+input.alternate,
+select.alternate {
+	width: 99px;
+}
+
+button.alternate {
+	background: url(calendar-icon.gif);
+	border: 0;
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin-right: 6px;
+	width: 20px;
+}
+button.alternate:hover,
+button.alternate.active {
+	background-position: 0 20px;
+}
+
+div.alternate {
+	background: url(calendar.png);
+	height: 195px;
+	padding: 0 6px;
+	text-align: center;
+	width: 147px;
+}	
+	div.alternate * {
+		margin: 0;
+		padding: 0;
+	}	
+	div.alternate div {
+		background: none !important;
+		cursor: move;
+		height: 185px;
+		overflow: hidden;
+		padding-top: 10px;
+		position: relative;
+		width: 147px;
+	}	
+	
+	div.alternate caption {
+		color: #333;
+		font: normal 12px/16px Arial, Helvetica, sans-serif;
+		overflow: hidden;
+		text-align: center;
+		width: 100%;
+	}
+	div.alternate caption a {
+		cursor: pointer;
+		display: block;
+		height: 12px;
+		overflow: hidden;
+		position: absolute;
+		text-indent: -100px;
+		top: 17px;
+		width: 11px;
+	}
+	div.alternate caption a.prev {
+		background-image: url(calendar-prev.gif);
+		left: 0;
+	}
+	div.alternate caption a.next {
+		background-image: url(calendar-next.gif);
+		right: 0;
+	}
+	div.alternate caption a:hover {
+		background-position: 0 12px;
+	}
+	div.alternate caption span {
+		padding-top: 6px;
+		position: relative;
+		text-align: center;
+	}
+	div.alternate caption span.month {
+		float: left;
+		width: 84px;
+	}
+	div.alternate caption span.month:after {
+		content: '';
+	}
+	div.alternate caption span a {
+		top: 8px;
+	}
+	div.alternate caption span.year {
+		float: right;
+		width: 63px;
+	}
+
+	div.alternate table {
+		background: #FFF;
+		border: 0;
+		border-collapse: collapse;
+		border-spacing: 0;
+		cursor: default;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 147px;
+	}
+	div.alternate td,
+	div.alternate th {
+		border: 0;
+		color: #0597DB;
+		font: normal 12px Arial, Helvetica, sans-serif;
+		height: 21px;
+		text-align: center;
+		width: 21px;
+	}
+	div.alternate td {
+		background: url(calendar-td.gif);
+		color: #FFF;
+		font-size: 11px;
+	}
+	div.alternate td.invalid {
+		color: #999;
+	}
+	div.alternate td.valid {
+		background: url(calendar-valid.gif);
+		color: #0597DB;
+		cursor: pointer;
+	}
+	div.alternate td.hilite {
+		background: url(calendar-hilite.gif);
+	}
+	div.alternate td.inactive {
+		background: url(calendar-td.gif) 0 100%;
+		color: #FFF;
+	}
+	div.alternate td.active,
+	div.alternate td.hover {
+		background: url(calendar-valid.gif) 0 100%;
+		color: #FFF;
+		cursor: pointer;
+	}
+
+
+#id_fecha_nacimiento, #fecha_nacimiento{}
+#id_fecha_nacimiento, #fecha_nacimiento input{}

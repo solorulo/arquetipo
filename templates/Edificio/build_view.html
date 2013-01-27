@@ -149,7 +149,7 @@ $(document).ready(function() {
     <!--end middle--> 
   </section>
   <section id="foot">
-    <div class="types">Crónicas</div>
+    <div class="types">Participa y comparte algo que sepas de éste lugar.</div>
     <div id="cronicas">
       <div id="contenedor">
         {% for C,foto in Cronicas reversed%}
@@ -188,7 +188,18 @@ $(document).ready(function() {
                     {% endif %}
         </div>
         <div class="txt_c">
-          <textarea name="" cols="" rows="" id="LaCronica" maxlength="120"></textarea>
+          <textarea name="" cols="" rows="4" id="LaCronica" maxlength="200"></textarea>
+          <div id="c1"></div>
+          <script type="text/javascript">
+                                $('#LaCronica').keyup(function () {
+                                    var left = 200 - $(this).val().length;
+                                    if (left < 0) {
+                                        left = 0;
+                                    }
+                                    $('#c1').text('Caracteres restantes: ' + left);
+                                });
+                
+                                </script>
           <div class="addcomment" id="AgregarCronica">Publicar</div>
         </div>
       </div>

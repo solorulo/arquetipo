@@ -417,34 +417,34 @@ def infoUser_ajax(request):
 		if request.FILES == None:
 			return HttpResponse('1')
 
-		#try:
-		__init__(request)
+		try:
+			__init__(request)
 
-		Informacion = User.objects.filter(username=getUser_info.usuario).update(first_name=request.POST['nombre'],last_name=request.POST['apellidos'],email=request.POST['email'])
-		Informacion = User.objects.get(username=getUser_info.usuario)
+			Informacion = User.objects.filter(username=getUser_info.usuario).update(first_name=request.POST['nombre'],last_name=request.POST['apellidos'],email=request.POST['email'])
+			Informacion = User.objects.get(username=getUser_info.usuario)
 
-		Foto = Informacion_personale.objects.get(user = Informacion.pk)
-		Foto.foto_perfil = request.FILES['foto_perfil']
-		Foto.save()
+			Foto = Informacion_personale.objects.get(user = Informacion.pk)
+			Foto.foto_perfil = request.FILES['foto_perfil']
+			Foto.save()
 
 
-		userInfo = User.objects.get(username=getUser_info.usuario)
-		Foto = Informacion_personale.objects.get(user = Informacion.pk)
+			userInfo = User.objects.get(username=getUser_info.usuario)
+			Foto = Informacion_personale.objects.get(user = Informacion.pk)
 
-		getUser_info.nombre = userInfo.first_name
-		getUser_info.apellidos = userInfo.last_name
-		getUser_info.email = userInfo.email
-		request.session['foto'] = url(Foto.foto_perfil)
-		getUser_info.foto = request.session['foto']
-		
+			getUser_info.nombre = userInfo.first_name
+			getUser_info.apellidos = userInfo.last_name
+			getUser_info.email = userInfo.email
+			request.session['foto'] = url(Foto.foto_perfil)
+			getUser_info.foto = request.session['foto']
+			
 
-		return render(request,'Usuario/usuario.html',{'success':True,'Informacion':getUser_info,})
-		
-		# except:
-		# 	return render(request,'Usuario/usuario.html',{
-		# 		'success':False,
-		# 		'Informacion':getUser_info,
-		# 		})
+			return render(request,'Usuario/usuario.html',{'success':True,'Informacion':getUser_info,})
+			
+		except:
+			return render(request,'Usuario/usuario.html',{
+				'success':False,
+				'Informacion':getUser_info,
+				})
 	else:
 		return render(request,'error404.html')
 

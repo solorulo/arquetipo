@@ -4,3 +4,4 @@ env/
 *.pot
 *.pyc
 local_settings.py
+virtual/

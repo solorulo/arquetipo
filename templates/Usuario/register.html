@@ -12,6 +12,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
 	<script type="text/javascript" src="{{MEDIA_URL}}js/jquery-ui-1.8.custom.min.js"></script>
+  <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$.localise('ui.multiselect', {/*language: 'es',/* */ path: '{{MEDIA_URL}}js/locale/'});
@@ -27,6 +28,7 @@
 			}
 		});
 	</script>
+
 	<script type="text/javascript" src="{{MEDIA_URL}}js/page.js"></script>
 	</head>
 	<body>
@@ -37,7 +39,7 @@
         <div class="encabezado">Gracias por transitar por<span> Entrecalle</span>, es momento de ser pieza clave <br />
           en esta comunidad</div>
         <div id="form_wrapper" class="form_wrapper">
-          <form action=" " id="register" class="register active" method="POST">
+          <form action="" id="register" class="register active" method="POST">
             {% csrf_token %}
             <h3>
               <!-- Aqui va el boton de facebook-->
@@ -72,6 +74,10 @@
             <div class="campo">
               <label>Contraseña:</label>
              {{uform.password}}
+            </div>
+            <div class="campo">
+              <label>Confirmar Contraseña:</label>
+             <input type="password" id="password_again" name="password_again" >
             </div>
             <div class="campo">
               <label>País:</label>
@@ -359,5 +365,26 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript">
+      $("#register").validate({
+        rules: {
+          username: {
+            required: true
+          },
+    password: {
+      required: true
+    },
+    password_again: {
+      required:true,
+      equalTo: "#id_password"
+    },
+    email:{
+      required:true,
+      email:true
+    }
+  }
+    });
+    </script>
 </body>
 </html>

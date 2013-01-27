@@ -1,0 +1,7 @@
+
+Parche 1:
+
+- Se cambio Crónica por la otra frase.
+- Imagenes del home envian al edificio.
+- La crónica tiene un contador de caracteres.
+- En el formulario de registro se pide que se verifique el password.
